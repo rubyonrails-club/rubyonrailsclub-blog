@@ -83,4 +83,7 @@ Rails.application.configure do
       system("bundle exec rubocop -A --fail-level=E #{parsable_files.shelljoin}", exception: true)
     end
   end
+
+  # Devise / Email
+  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
 end
