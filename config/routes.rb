@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'welcome/index'
+  get "welcome/index"
   namespace :administrate do
     resources :articles
   end
