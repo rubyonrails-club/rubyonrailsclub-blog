@@ -6,7 +6,7 @@ namespace :dev do
     show_spinner("Adding articles to the database") { add_articles }
   end
 
-  def add_articless
+  def add_articles
     50.times do
       Article.create(
         title: Faker::Lorem.sentence.delete("."),
