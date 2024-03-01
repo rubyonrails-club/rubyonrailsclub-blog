@@ -9,4 +9,8 @@
     <%= article.body %>
   </p>
 
+  <p>
+    <strong>Cover Image:</strong>
+    <%= image_tag article.cover_image.variant(:thumb) if article.cover_image.attached? %>
+  </p>
 </div>
