@@ -3,7 +3,7 @@
 module Administrate
   class ArticlesController < ApplicationController
     before_action :authenticate_admin!
-    before_action :set_article, only: [:show, :edit, :update, :destroy]
+    before_action :set_article, only: [:show, :edit, :update, :destroy, :destroy_cover_image]
 
     # GET /articles or /articles.json
     def index
@@ -59,6 +59,14 @@ module Administrate
       respond_to do |format|
         format.html { redirect_to(administrate_articles_url, notice: "Article was successfully destroyed.") }
         format.json { head(:no_content) }
+      end
+    end
+
+    def destroy_cover_image
+      @article.cover_image.purge
+
+      respond_to do |format|
+        format.turbo_stream { render(turbo_stream: turbo_stream.remove(@article)) }
       end
     end
 

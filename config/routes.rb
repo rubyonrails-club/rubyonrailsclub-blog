@@ -3,8 +3,13 @@
 Rails.application.routes.draw do
   devise_for :admins
   get "welcome/index"
+
   namespace :administrate do
-    resources :articles
+    resources :articles do
+      member do
+        delete :destroy_cover_image
+      end
+    end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
