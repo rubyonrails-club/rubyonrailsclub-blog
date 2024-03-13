@@ -1,10 +1,15 @@
-<div>
-  <p>
-    <strong>Title:</strong>
-    <%= article.title %>
+<a href="post.html" class="item">
+  <%= article.cover_image.attached? ? image_tag(article.cover_image.variant(:thumb) , class: "item-image", alt:"post 1") : image_tag("posts/post1.jpg", class: "item-image", alt:"post 1") %>
 
-    <strong>Date:</strong>
-    <%= l(article.created_at, format: :only_date) %>
-  </p>
-  <%= image_tag article.cover_image.variant(:thumb) if article.cover_image.attached? %>
-</div>
+  <div class="item-row">
+    <div class="item-category">Backend</div>
+    <div class="item-comments">25</div>
+  </div>
+  <div class="item-row">
+    <div class="item-title"><%= article.title %></div>
+  </div>
+  <div class="item-row">
+    <div class="item-author">Jackson Pires</div>
+    <div class="item-date">15 de set</div>
+  </div>
+</a>

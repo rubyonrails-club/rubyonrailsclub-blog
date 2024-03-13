@@ -1,14 +1,3 @@
 <%= render "main_banner" %>
 <%= render "articles" %>
 <%= render "categories" %>
-
-<h1>Articles</h1>
-
-<p>Qtd de variáveis: <%= ENV.size %></p>
-<p>Valor da variável DEFAULT_PASSWORD: <%= ENV['DEFAULT_PASSWORD'] %></p>
-
-<div id="articles">
-  <% @articles.each do |article| %>
-    <%= render partial: "article", locals: { article: article } %>
-  <% end %>
-</div>
