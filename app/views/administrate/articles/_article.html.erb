@@ -1,16 +1,14 @@
-<div id="<%= dom_id article %>">
-  <p>
-    <strong>Title:</strong>
-    <%= article.title %>
-  </p>
-
-  <p>
-    <strong>Body:</strong>
-    <%= article.body %>
-  </p>
-
-  <p>
-    <strong>Cover Image:</strong>
-    <%= image_tag article.cover_image.variant(:thumb) if article.cover_image.attached? %>
-  </p>
-</div>
+<tr>
+  <td><%= l(article.created_at, format: :short) %></td>
+  <td>Frontend</td>
+  <td><%= article.title %></td>
+  <td>
+    <div class="icons">
+      <a href="#" title="Editar"><%= image_tag "icons/gray/edit.svg", alt: "edit" %></a>
+      <%= link_to [:administrate, article], title: "Visualizar", alt: "eye" do %>
+        <%= image_tag "icons/gray/eye.svg" %>
+      <% end %>
+      <a href="#" title="Deletar"><%= image_tag "icons/gray/close.svg", alt: "close" %></a>
+    </div>
+  </td>
+</tr>
