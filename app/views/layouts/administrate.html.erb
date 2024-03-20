@@ -19,6 +19,7 @@
       rel="stylesheet">
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
     <%= javascript_importmap_tags %>
   </head>
@@ -32,6 +33,19 @@
     </main>
 
     <%= javascript_include_tag "admin", "data-turbo-track": "reload" %>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <% if notice %>
+      <script>
+        Toastify({
+          text: "<%= notice %>",
+          duration: 3000,
+          style: {
+            background: "green",
+          }
+        }).showToast();
+      </script>
+    <% end %>
   </body>
 </html>
 
