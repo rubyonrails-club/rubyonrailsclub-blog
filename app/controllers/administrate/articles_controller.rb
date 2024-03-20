@@ -1,11 +1,8 @@
 # frozen_string_literal: true
 
 module Administrate
-  class ArticlesController < ApplicationController
-    before_action :authenticate_admin!
+  class ArticlesController < AdministrateController
     before_action :set_article, only: [:show, :edit, :update, :destroy, :destroy_cover_image]
-
-    layout "administrate"
 
     # GET /articles or /articles.json
     def index
