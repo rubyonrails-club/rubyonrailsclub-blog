@@ -12,7 +12,9 @@
         <%= image_tag "icons/gray/eye.svg" %>
       <% end %>
 
-      <a href="#" title="Deletar"><%= image_tag "icons/gray/close.svg", alt: "close" %></a>
+      <%= button_to [:administrate, article], title: "Apagar", class: "button-transparent", alt: "close", data: { turbo: false }, method: :delete do %>
+        <%= image_tag "icons/gray/close.svg" %>
+      <% end %>
     </div>
   </td>
 </tr>
