@@ -1,10 +1,15 @@
-<h1>Editing article</h1>
+<%= link_to "Artigos", administrate_articles_path, class:"admin-title"%>
+<div class="main-content">
+  <div class="row">
+    <h2 class="admin-subtitle">Edição de artigo</h2>
+    <div class="buttons">
+      <a href="#" class="button small" onclick="document.forms['article-form'].submit()">
+        <%= image_tag "icons/white/save.svg", alt:"save" %>
+        Salvar artigo
+      </a>
+    </div>
+  </div>
 
-<%= render "form", article: @article %>
-
-<br>
-
-<div>
-  <%= link_to "Mostrar esse artigo", [:administrate, @article] %> |
-  <%= link_to "Back to articles", administrate_articles_path %>
+  <%= render "form", article: @article %>
 </div>
+

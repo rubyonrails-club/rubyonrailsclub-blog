@@ -4,10 +4,14 @@
   <td><%= article.title %></td>
   <td>
     <div class="icons">
-      <a href="#" title="Editar"><%= image_tag "icons/gray/edit.svg", alt: "edit" %></a>
+      <%= link_to edit_administrate_article_path(article), title: "Editar", alt: "edit" do %>
+        <%= image_tag "icons/gray/edit.svg" %>
+      <% end %>
+
       <%= link_to [:administrate, article], title: "Visualizar", alt: "eye" do %>
         <%= image_tag "icons/gray/eye.svg" %>
       <% end %>
+
       <a href="#" title="Deletar"><%= image_tag "icons/gray/close.svg", alt: "close" %></a>
     </div>
   </td>
