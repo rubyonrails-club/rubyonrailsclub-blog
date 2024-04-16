@@ -6,7 +6,7 @@ module Administrate
 
     # GET /articles or /articles.json
     def index
-      @articles = Article.all
+      @articles = Article.includes(:category).all
     end
 
     # GET /articles/1 or /articles/1.json

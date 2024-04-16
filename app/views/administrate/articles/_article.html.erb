@@ -1,6 +1,6 @@
 <tr>
   <td><%= l(article.created_at, format: :short) %></td>
-  <td>Frontend</td>
+  <td><%= article.category.name %></td>
   <td><%= article.title %></td>
   <td>
     <div class="icons">
