@@ -12,6 +12,14 @@
         <%= form.text_area :body, disabled: (params[:action] == "show"), rows:"18", class:"textarea", placeholder:"Escreva aqui o conteúdo do post" %>
       </div>
     </div>
+
+    <div class="input-row">
+      <div class="input-container">
+        <%= form.label :category_id, class:"label" %>
+        <%= form.select :category_id, options_from_collection_for_select(Category.all, :id, :name, article.category_id), {}, { disabled: (params[:action] == "show"), class:"select" } %>
+      </div>
+    </div>
+
     <div>
       <%= form.label :cover_image, style: "display: block", class: "label-input-file" %>
       <%= form.file_field :cover_image if params[:action] != "show" %>
