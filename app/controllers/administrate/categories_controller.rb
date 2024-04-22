@@ -52,7 +52,6 @@ module Administrate
 
     # DELETE /categorys/1 or /categorys/1.json
     def destroy
-
       respond_to do |format|
         format.html do
           if @category.articles.count > 0
