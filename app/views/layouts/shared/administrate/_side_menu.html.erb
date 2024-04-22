@@ -19,13 +19,14 @@
   </div>
   <div class="row">
     <nav class="menu">
-      <%= link_to administrate_articles_path, class: "active" do %>
+      <%= link_to administrate_articles_path, class: active_link?("articles") do %>
         <div class="icon">
           <%= image_tag "icons/white/posts.svg", alt: "posts" %>
         </div>
         <label for="#">Artigos</label>
       <% end %>
-      <%= link_to administrate_categories_path, class: "active" do %>
+
+      <%= link_to administrate_categories_path, class: active_link?("categories") do %>
         <div class="icon">
           <%= image_tag "icons/white/categories.svg", alt: "categories" %>
         </div>
