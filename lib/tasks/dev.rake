@@ -35,10 +35,10 @@ namespace :dev do
         category: Category.all.sample,
       )
 
-      image_id = rand(1..3)
+      image_id = rand(1..5)
 
       article.cover_image.attach(
-        io: File.open(Rails.root.join("lib/tasks/images/article_#{image_id}.jpg")),
+        io: File.open(Rails.root.join("lib/tasks/images/full-hd/0#{image_id}.jpg")),
         filename: "article_#{image_id}.jpg",
       )
     end

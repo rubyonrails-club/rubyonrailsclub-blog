@@ -1,6 +1,6 @@
 <section class="section posts-detail-title-section">
   <div class="container">
-    <h1 class="post-detail-title">Como desenvolver com Ruby on Rails 6</h1>
+    <h1 class="post-detail-title"><%= @article.title %></h1>
   </div>
 </section>
 
@@ -8,7 +8,7 @@
   <div class="container">
     <div class="primary-content">
       <div class="post-detail-image">
-        <%= image_tag "posts/detail/post1.jpg", alt:"post 1" %>
+        <%= image_tag(cover_image_fallback(@article, :medium) , alt: @article.title) %>
       </div>
     </div>
     <div class="secondary-content">
@@ -55,39 +55,7 @@
   <div class="container">
     <div class="primary-content">
       <div class="post-detail-content">
-        <h2>Pré-requisitos</h2>
-        <p>
-          Lorem ipsum dolor sit amet . Os operadores gráficos e tipográficos sabem disso bem, na realidade, todas as
-          profissões que lidam com o universo da comunicação têm um relacionamento estável com essas palavras, mas o
-          que
-          é? Lorem ipsum é um texto fofo sem qualquer sentido.
-
-          É uma seqüência de palavras latinas que, como estão posicionadas, não formem frases com um sentido completo,
-          mas dão vida a um texto de teste útil para preencher espaços que irão Posteriormente serão ocupados a partir
-          de textos ad hoc compostos por profissionais de comunicação. <br><br>
-
-          É certamente o texto de marcador de posição mais famoso, mesmo que existam diferentes versões distinguíveis
-          da ordem em que as palavras latinas são repetidas, <a href="#">clique aqui</a> para saber mais <br><br>
-
-          Lorem ipsum contém as tipos de letra mais em uso, um aspecto que permite que você tenha uma visão geral da
-          renderização do texto em termos de escolha da fonte e tamanho da fonte.<br><br>
-
-          Ao se referir a Lorem ipsum, diferentes expressões são usadas, nomeadamente texto de preenchimento, texto
-          fictício, texto cego ou texto do espaço reservado: em suma, seu significado também pode ser zero, mas sua
-          utilidade é tão clara quanto ao longo dos séculos e resiste às versões irônicas e modernas que vieram com a
-          chegada da web.
-        </p>
-        <h3>Como instalar</h3>
-        <p>
-          Lorem ipsum dolor sit amet. Os operadores gráficos e tipográficos sabem disso bem, na realidade, todas as
-          profissões que lidam com o universo da comunicação têm um relacionamento estável com essas palavras, mas o
-          que
-          é? Lorem ipsum é um texto fofo sem qualquer sentido. <br><br>
-
-          É uma seqüência de palavras latinas que, como estão posicionadas, não formem frases com um sentido completo,
-          mas dão vida a um texto de teste útil para preencher espaços que irão Posteriormente serão ocupados a partir
-          de textos ad hoc compostos por profissionais de comunicação.
-        </p>
+        <%= @article.body %>
       </div>
       <div class="post-detail-author-bio">
         <div class="image">
@@ -249,7 +217,3 @@
   </div>
   </div>
 </section>
-
-
-<h1><%= @article.title %></h1>
-<%= @article.body %>
