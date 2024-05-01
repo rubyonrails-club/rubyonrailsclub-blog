@@ -5,6 +5,7 @@ class Article < ApplicationRecord
   friendly_id :title, use: :slugged
 
   belongs_to :category
+  belongs_to :author
 
   has_one_attached :cover_image do |attachable|
     attachable.variant(:thumb, resize_to_limit: [325, 205])

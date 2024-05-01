@@ -3,8 +3,5 @@ inherit_gem:
 require:
   - rubocop-rails
 
-Rails/HasManyOrHasOneDependent:
-  Enabled: false
-
 AllCops:
   TargetRubyVersion: 3.3.0
