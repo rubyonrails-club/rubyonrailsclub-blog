@@ -18,8 +18,12 @@
       <div class="share-post">
         <div class="share-post-title">Compartilhar post</div>
         <div class="socials">
-          <a href="#"><%= image_tag "icons/red/facebook.svg" %></a>
-          <a href="#"><%= image_tag "icons/red/twitter.svg" %></a>
+          <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{article_url(@article)}" do %>
+            <%= image_tag "icons/red/facebook.svg" %>
+          <% end %>
+          <%= link_to "https://twitter.com/intent/tweet?text=#{@article.title}&url=#{article_url(@article)}" do %>
+            <%= image_tag "icons/red/twitter.svg" %>
+          <% end %>
         </div>
       </div>
     </div>
