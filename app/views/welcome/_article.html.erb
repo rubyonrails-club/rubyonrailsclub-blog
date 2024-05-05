@@ -2,14 +2,14 @@
   <%= image_tag(cover_image_fallback(article) , class: "item-image", alt:"article image") %>
 
   <div class="item-row">
-    <div class="item-category">Backend</div>
+    <div class="item-category"><%= article.category.name %></div>
     <div class="item-comments">25</div>
   </div>
   <div class="item-row">
     <div class="item-title"><%= article.title %></div>
   </div>
   <div class="item-row">
-    <div class="item-author">Jackson Pires</div>
-    <div class="item-date">15 de set</div>
+    <div class="item-author"><%= article.author.name %></div>
+    <div class="item-date"><%= article.created_at.strftime("%d de %b") %></div>
   </div>
 <% end %>

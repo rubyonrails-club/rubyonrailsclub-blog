@@ -61,6 +61,7 @@ namespace :dev do
         body: Faker::Lorem.paragraph(sentence_count: rand(100..200)),
         category: Category.all.sample,
         author: Author.all.sample,
+        created_at: Faker::Date.between(from: 1.year.ago, to: Date.current),
       )
 
       image_id = rand(1..5)

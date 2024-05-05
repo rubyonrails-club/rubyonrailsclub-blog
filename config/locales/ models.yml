@@ -17,6 +17,8 @@ pt-BR:
         id: Identificador
         title: Título
         body: Corpo
+        category_id: Categoria
+        author_id: Autor
         created_at: Criado em
         updated_at: Atualizado em
         slug: Slug
