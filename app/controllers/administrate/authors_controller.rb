@@ -2,7 +2,7 @@
 
 module Administrate
   class AuthorsController < AdministrateController
-    before_action :set_author, only: [:show, :edit, :update, :destroy]
+    before_action :set_author, only: [:show, :edit, :update, :destroy, :destroy_avatar_image]
 
     # GET /authors or /authors.json
     def index
@@ -25,6 +25,7 @@ module Administrate
     # POST /authors or /authors.json
     def create
       @author = Author.new(author_params)
+      @author.avatar_image.attach(author_params[:avatar_image])
 
       respond_to do |format|
         if @author.save
@@ -68,6 +69,14 @@ module Administrate
       end
     end
 
+    def destroy_avatar_image
+      @author.avatar_image.purge
+
+      respond_to do |format|
+        format.turbo_stream { render(turbo_stream: turbo_stream.remove(@author)) }
+      end
+    end
+
     private
 
     # Use callbacks to share common setup or constraints between actions.
@@ -85,6 +94,7 @@ module Administrate
         :twitter_profile_url,
         :linkedin_profile_url,
         :youtube_profile_url,
+        :avatar_image,
       )
     end
   end

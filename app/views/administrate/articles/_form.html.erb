@@ -22,7 +22,7 @@
 
     <div>
       <%= form.label :cover_image, style: "display: block", class: "label-input-file" %>
-      <%= form.file_field :cover_image if params[:action] != "show" %>
+      <%= (form.file_field :cover_image, style: "margin-bottom: 8px;") if params[:action] != "show" %>
 
       <div id=<%= dom_id(article) %>>
         <%= image_tag article.cover_image.variant(:thumb) if article.cover_image.attached? %>

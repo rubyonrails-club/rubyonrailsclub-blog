@@ -16,7 +16,12 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :authors
+    resources :authors do
+      member do
+        delete :destroy_avatar_image
+      end
+    end
+
     resources :categories
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
