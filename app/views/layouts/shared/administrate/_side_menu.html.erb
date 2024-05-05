@@ -21,14 +21,21 @@
     <nav class="menu">
       <%= link_to administrate_articles_path, class: active_link?("articles") do %>
         <div class="icon">
-          <%= image_tag "icons/white/posts.svg", alt: "posts" %>
+          <%= image_tag "icons/white/posts.svg", alt: "artigos" %>
         </div>
         <label for="#">Artigos</label>
       <% end %>
 
+      <%= link_to administrate_authors_path, class: active_link?("authors") do %>
+        <div class="icon">
+          <%= image_tag "icons/white/authors.svg", alt: "autores" %>
+        </div>
+        <label for="#">Autores</label>
+      <% end %>
+
       <%= link_to administrate_categories_path, class: active_link?("categories") do %>
         <div class="icon">
-          <%= image_tag "icons/white/categories.svg", alt: "categories" %>
+          <%= image_tag "icons/white/categories.svg", alt: "categorias" %>
         </div>
         <label for="#">Categorias</label>
       <% end %>

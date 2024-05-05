@@ -1,0 +1,49 @@
+<div class="row">
+  <%= form_with(model: [:administrate, author], class: "form", id: "author-form") do |form| %>
+    <div class="input-row">
+      <div class="input-container">
+        <%= form.label :name, class:"label" %>
+        <%= form.text_field :name, disabled: (params[:action] == "show"), placeholder:"Digite aqui o nome do autor", class:"input" %>
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="input-container">
+        <%= form.label :description, class:"label" %>
+        <%= form.text_area :description, disabled: (params[:action] == "show"), placeholder:"Digite uma descrição para o autor", class:"input" %>
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="input-container">
+        <%= form.label :facebook_profile_url, class:"label" %>
+        <%= form.text_field :facebook_profile_url, disabled: (params[:action] == "show"), placeholder:"Digite aqui a URL do perfil do facebook", class:"input" %>
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="input-container">
+        <%= form.label :instagram_profile_url, class:"label" %>
+        <%= form.text_field :instagram_profile_url, disabled: (params[:action] == "show"), placeholder:"Digite aqui a URL do perfil do instagram", class:"input" %>
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="input-container">
+        <%= form.label :twitter_profile_url, class:"label" %>
+        <%= form.text_field :twitter_profile_url, disabled: (params[:action] == "show"), placeholder:"Digite aqui a URL do perfil do twitter", class:"input" %>
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="input-container">
+        <%= form.label :linkedin_profile_url, class:"label" %>
+        <%= form.text_field :linkedin_profile_url, disabled: (params[:action] == "show"), placeholder:"Digite aqui a URL do perfil do linkedin", class:"input" %>
+      </div>
+    </div>
+    <div class="input-row">
+      <div class="input-container">
+        <%= form.label :youtube_profile_url, class:"label" %>
+        <%= form.text_field :youtube_profile_url, disabled: (params[:action] == "show"), placeholder:"Digite aqui o nome do autor youtube", class:"input" %>
+      </div>
+    </div>
+
+    <%= button_to "Apagar categoria", [:administrate, @author], data: { turbo: false }, method: :delete, class:"button small" if params[:action] == "show" %>
+    <%= form.submit style: "display: none;" %>
+  <% end %>
+</div>

@@ -1,0 +1,14 @@
+<%= link_to "Autores", administrate_authors_path, class:"admin-title"%>
+<div class="main-content">
+  <div class="row">
+    <h2 class="admin-subtitle">Visualização de autores</h2>
+    <div class="buttons">
+      <%= link_to edit_administrate_author_path(@author), class:"button small" do %>
+        <%= image_tag "icons/white/edit.svg", alt:"save" %>
+        Editar autor
+      <% end  %>
+    </div>
+  </div>
+
+  <%= render "form", author: @author %>
+</div>
