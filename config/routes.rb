@@ -22,7 +22,11 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :categories
+    resources :categories do
+      member do
+        delete :destroy_cover_image
+      end
+    end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

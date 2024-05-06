@@ -6,6 +6,25 @@
         <%= form.text_field :name, disabled: (params[:action] == "show"), placeholder:"Digite aqui o nome da categoria", class:"input" %>
       </div>
     </div>
+    <div class="input-row">
+      <div class="input-container">
+        <%= form.label :description, class:"label" %>
+        <%= form.text_area :description, disabled: (params[:action] == "show"), class:"input" %>
+      </div>
+    </div>
+
+    <div>
+      <%= form.label :cover_image, style: "display: block", class: "label-input-file" %>
+      <%= (form.file_field :cover_image, style: "margin-bottom: 8px;") if params[:action] != "show" %>
+
+      <div id=<%= dom_id(category) %>>
+        <%= image_tag category.cover_image if category.cover_image.attached? %>
+
+        <%= link_to "Remover",
+              destroy_cover_image_administrate_category_path(category),
+              data: { "turbo-confirm": "Tem certeza?", "turbo-method": :delete } if category.cover_image.attached? && params[:action] != "show" %>
+      </div>
+    </div>
 
     <%= button_to "Apagar categoria", [:administrate, @category], data: { turbo: false }, method: :delete, class:"button small" if params[:action] == "show" %>
     <%= form.submit style: "display: none;" %>
