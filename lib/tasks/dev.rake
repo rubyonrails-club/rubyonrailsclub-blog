@@ -10,6 +10,8 @@ namespace :dev do
     system("rails dev:add_categories")
     system("rails dev:add_authors")
     system("rails dev:add_articles")
+    system("rails dev:add_users")
+    system("rails dev:add_comments")
   end
 
   desc "Add categories to the database"
@@ -25,6 +27,16 @@ namespace :dev do
   desc "Add articles to the database"
   task add_articles: :environment do
     show_spinner("Adding articles to the database") { add_articles }
+  end
+
+  desc "Add users to the database"
+  task add_users: :environment do
+    show_spinner("Adding users to the database") { add_users }
+  end
+
+  desc "Add comments to the database"
+  task add_comments: :environment do
+    show_spinner("Adding comments to the database") { add_comments }
   end
 
   def add_categories
@@ -79,6 +91,27 @@ namespace :dev do
       article.cover_image.attach(
         io: File.open(Rails.root.join("lib/tasks/images/full-hd/0#{image_id}.jpg")),
         filename: "article_#{image_id}.jpg",
+      )
+    end
+  end
+
+  def add_users
+    30.times do
+      User.create(
+        email: Faker::Internet.email,
+        password: ENV["DEFAULT_PASSWORD"],
+        password_confirmation: ENV["DEFAULT_PASSWORD"],
+      )
+    end
+  end
+
+  def add_comments
+    100.times do
+      Comment.create(
+        user: User.all.sample,
+        article: Article.all.sample,
+        body: Faker::Lorem.paragraph(sentence_count: rand(3..10)),
+        created_at: Faker::Date.between(from: 1.year.ago, to: Date.current),
       )
     end
   end
