@@ -89,7 +89,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_07_003100) do
   end
 
   create_table "comments", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "user_id", null: false
+    t.uuid "user_id"
     t.uuid "article_id", null: false
     t.text "body"
     t.datetime "created_at", null: false
