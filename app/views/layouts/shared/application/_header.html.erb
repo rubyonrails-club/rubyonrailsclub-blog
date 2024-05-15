@@ -15,7 +15,8 @@
       </ul>
       <div class="mobile-actions">
         <div>
-          <a href="#" class="button secondary">Entrar</a>
+          <%= link_to "Entrar", new_user_session_path, class:"button secondary" unless user_signed_in? %>
+          <%= button_to "Sair", destroy_user_session_path, method: :delete, class:"button secondary" if user_signed_in? %>
         </div>
       </div>
     </nav>
@@ -23,7 +24,8 @@
       <%= image_tag "icons/red/menu.svg", alt:"Open Menu" %>
     </a>
     <div class="actions">
-      <a href="#" class="button">Entrar</a>
+      <%= link_to "Entrar", new_user_session_path, class:"button secondary" unless user_signed_in? %>
+      <%= button_to "Sair", destroy_user_session_path, method: :delete, class:"button secondary" if user_signed_in? %>
     </div>
   </div>
 </header>
