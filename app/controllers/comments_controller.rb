@@ -5,9 +5,13 @@ class CommentsController < ApplicationController
 
   def create
     @article = Article.friendly.find(params[:article_id])
-    @article.comments.create!(comments_params)
+    comment = @article.comments.new(comments_params)
 
-    redirect_to(article_path(@article))
+    if comment.save
+      redirect_to(article_path(@article), notice: "Commentário criado com sucesso!")
+    else
+      redirect_to(article_path(@article), alert: "Erro ao criar comentário! - #{comment.errors.full_messages.join(",")}")
+    end
   end
 
   private

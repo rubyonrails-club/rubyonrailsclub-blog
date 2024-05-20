@@ -3,6 +3,7 @@ pt-BR:
     models:
       admin: Administrador
       article: Artigo
+      comment: Comentário
     attributes:
       admin:
         id: Identificador
@@ -23,3 +24,10 @@ pt-BR:
         updated_at: Atualizado em
         slug: Slug
         cover_image: Imagem de capa
+      comment:
+        id: Identificador
+        body: Comentário
+        article_id: Artigo
+        author_id: Autor
+        created_at: Criado em
+        updated_at: Atualizado em

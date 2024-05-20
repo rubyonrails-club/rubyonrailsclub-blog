@@ -109,7 +109,7 @@
           </div>
         </div>
         <div class="comment-form-container">
-          <%= form_with(model: [@article, @article.comments.build], url: article_comments_path(@article)) do |form| %>
+          <%= form_with(model: [@article, @article.comments.build], url: article_comments_path(@article), data: { turbo: false }) do |form| %>
             <%= form.text_area :body, class:"textarea darker full double-padding", placeholder:"Insira seu comentário aqui..." %>
             <%= form.submit "Publicar", class:"button small" %>
           <% end %>
