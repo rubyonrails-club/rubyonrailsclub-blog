@@ -14,5 +14,4 @@ class ArticlesController < ApplicationController
 
     @article.comments.order(created_at: :asc)
   end
-
 end
