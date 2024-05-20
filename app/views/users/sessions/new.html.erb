@@ -12,13 +12,21 @@
       <div class="input-row">
         <div class="input-container">
           <%= f.label :password, class:"label" %>
-          <%= f.password_field :password, placeholder: "Digite seu e-mail", class: "input" %>
+          <%= f.password_field :password, placeholder: "Digite seu senha", class: "input" %>
         </div>
       </div>
       <div class="input-row">
         <div class="input-container">
           <%= f.submit "Entrar", class: "button full" %>
         </div>
+      </div>
+
+      <div class="form-divisor"></div>
+
+      <div class="social-buttons">
+        <%= link_to new_user_registration_path, class:"button sign-up" do %>
+          <span class="button-label">Cadastre-se</span>
+        <% end %>
       </div>
     <% end %>
   </div>
