@@ -8,7 +8,7 @@
   <div class="container">
     <div class="primary-content">
       <div class="post-detail-image">
-        <%= image_tag(cover_image_fallback(@article, :medium) , alt: @article.title) %>
+        <%= image_tag(cover_image_fallback(@article) , alt: @article.title) %>
       </div>
     </div>
     <div class="secondary-content">
@@ -159,7 +159,7 @@
         <div class="other-posts-title">Outras publicações</div>
         <% @other_articles.each do |other_article| %>
           <a href="#" class="post-resume">
-            <%= image_tag(cover_image_fallback(other_article, :thumb) , alt: other_article.title, class:"post-resume-image") %>
+            <%= image_tag(cover_image_fallback(other_article) , alt: other_article.title, class:"post-resume-image") %>
             <h4 class="post-resume-title"><%= other_article.title %></h4>
           </a>
         <% end %>
