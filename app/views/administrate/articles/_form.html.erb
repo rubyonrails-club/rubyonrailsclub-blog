@@ -9,6 +9,7 @@
     <div class="input-row">
       <div class="input-container">
         <%= form.label :body, class:"label" %>
+        <%= link_to "[markdown]", "#", id: "markdown-button" %>
         <%= form.text_area :body, disabled: (params[:action] == "show"), rows:"18", class:"textarea", placeholder:"Escreva aqui o conteúdo do post" %>
       </div>
     </div>
@@ -44,3 +45,25 @@
     <%= form.submit style: "display: none;" %>
   <% end %>
 </div>
+
+
+<script>
+  const markdownButton = document.getElementById('markdown-button');
+
+  markdownButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const el = document.querySelector('textarea');
+    const stackedit = new Stackedit();
+
+    stackedit.openFile({
+      name: 'Filename',
+      content: {
+        text: el.value
+      }
+    });
+
+    stackedit.on('fileChange', (file) => {
+      el.value = file.content.text;
+    });
+  });
+</script>
