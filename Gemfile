@@ -67,6 +67,8 @@ group :development do
   gem "rubocop-rails", require: false
   gem "rubocop-shopify", require: false
 
+  gem "letter_opener"
+
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
@@ -74,4 +76,4 @@ group :development do
   # gem "spring"
 end
 
-gem "dockerfile-rails", ">= 1.6", :group => :development
+gem "dockerfile-rails", ">= 1.6", group: :development
