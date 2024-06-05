@@ -7,6 +7,11 @@
         <%= image_tag "icons/white/add.svg", alt: "add" %>
         Adicionar novo autor
       <% end %>
+
+      <%= link_to administrate_authors_path(format: :pdf), class: "button small", target: "_blank" do %>
+        <%= image_tag "icons/white/add.svg", alt: "add" %>
+        Exportar PDF
+      <% end %>
     </div>
   </div>
   <div class="row">
