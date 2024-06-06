@@ -24,6 +24,10 @@
           <%= link_to "https://twitter.com/intent/tweet?text=#{@article.title}&url=#{article_url(@article)}" do %>
             <%= image_tag "icons/red/twitter.svg" %>
           <% end %>
+
+          <%= link_to article_url(@article, format: :pdf), target: "_blank" do %>
+            PDF
+          <% end %>
         </div>
       </div>
     </div>

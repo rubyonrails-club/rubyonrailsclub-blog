@@ -51,6 +51,9 @@ gem "image_processing", "~> 1.2"
 gem "sassc-rails"
 gem "redcarpet"
 gem "prawn-rails"
+gem "ferrum"
+gem "rmagick"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: [:mri, :windows]
